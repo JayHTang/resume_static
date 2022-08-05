@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playfair+Display|PT+Sans" />
+    <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/font-awesome.css" />
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script>
+      $(window).load(function () {
+        // Page Load Anim
+        $(".contOut").animate(
+          {
+            opacity: "1",
+          },
+          1200
+        );
+        // Jobs Accordion
+        $(".fa-plus").closest(".job").find("p").slideUp();
+        $(".openBtn").on("click", function () {
+          if ($(this).hasClass("open")) {
+            $(this).removeClass("open").removeClass("fa-minus").addClass("fa-plus");
+            $(this)
+              .closest(".job")
+              .find("p")
+              .animate(
+                {
+                  opacity: "0",
+                },
+                200
+              )
+              .slideUp();
+          } else {
+            $(this).addClass("open").removeClass("fa-plus").addClass("fa-minus");
+            $(this).closest(".job").find("p").slideDown().animate(
+              {
+                opacity: "1",
+              },
+              400
+            );
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="section top clearfix">
+          <div class="logoCont"></div>
+          <h1>Jay Tang</h1>
+          <div class="moreInfo">
+            <p>
+              jay.hao.tang@gmail.com<br />
+              (312) 532.6138<br />
+            </p>
+          </div>
+          <p class="tagline">
+            Software Engineer<br />
+          </p>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <div class="job">
+            <h2><img class="logo" src="images/google.png"/>Google<i class="fa fa-minus openBtn open"></i><span>July 2022 - present </span></h2>
+            <p>
+              <strong>Position: </strong>SWE<br />
+              <strong>Description: </strong>Software Engineer<br />
+              <span class="brag">Google Ads > Customer Engagement > Common Platform > Connect Identity</span>
+            </p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <div class="job">
+            <h2><img class="logo" src="images/jll.svg"/>JLL Technologies (JLLT)<i class="fa fa-plus openBtn"></i><span>May 2021 - May 2022 </span></h2>
+            <p>
+              <strong>Position: </strong>Senior Data Enginner<br />
+              <strong>Description: </strong>Process commercial real estate data<br />
+              <span class="brag">
+			    &#8226;&nbsp;&nbsp;ETLs with PySpark in Azure Data Lake<br />
+				&#8226;&nbsp;&nbsp;APIs which handles REST requests and GraphQL queries<br />
+			  </span>
+            </p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <div class="job">
+            <h2><img class="logo logo-white" src="images/supernova.png"/>Supernova Lending<i class="fa fa-plus openBtn"></i><span>Dec 2020 - May 2021 </span></h2>
+            <p>
+              <strong>Position: </strong>Software Engineer<br />
+              <strong>Description: </strong>Maintain Security Master data<br />
+              <span class="brag">
+			    &#8226;&nbsp;&nbsp;Python ETLs for security pricing data<br />
+				&#8226;&nbsp;&nbsp;End of day data for all securities and real-time intra-day data for stocks<br />
+			  </span>
+            </p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <div class="job">
+            <h2><img class="logo" src="images/depaul.png"/>DePaul University<i class="fa fa-plus openBtn"></i><span>Apr 2017 - Nov 2020 </span></h2>
+            <p>
+              <strong>Position: </strong>ERP Developer/Business Analyst<br />
+              <strong>Description: </strong>Application development for university's ERP system<br />
+              <span class="brag">
+			    &#8226;&nbsp;&nbsp;Application development for jobs that PeopleSoft cannot do<br />
+			  </span>
+            </p>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix half">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <div class="skills code odd">
+            <h3>Programming Languages<i class="fa fa-code"></i></h3>
+            <ul>
+              <li class="prim">Python</li>
+              <li>PySpark</li>
+			  <li>SQLAlchemy</li>
+			  <li>Django</li>
+              <li class="prim">C#</li>
+			  <li>.NET Framework</li>
+			  <li>.NET Core</li>
+              <li class="prim">C/C++</li>
+              <li class="prim">Java</li>
+			  <li>Scala</li>
+            </ul>
+          </div>
+          <div class="skills software">
+            <h3>Practices & Tools<i class="fa fa-laptop"></i></h3>
+            <ul>
+              <li class="prim">Relational Databases</li>
+              <li>SQL Server</li>
+              <li>Oracle Database</li>
+              <li>MySQL</li>
+              <li>SQLite</li>
+              <li class="prim">Big Data</li>
+              <li>Databricks</li>
+              <li>Azure Cosmos DB</li>
+              <li>Redis</li>
+              <li class="prim">Dev Approach</li>
+              <li>Git</li>
+              <li>Agile</li>
+              <li class="prim">Troubleshooting</li>
+              <li>Root cause Analysis</li>
+              <li>Chrome Dev Tools</li>
+			  <li class="prim">Operating Systems</li>
+              <li>Windows</li>
+              <li>Linux</li>
+			  <li>macOS</li>
+            </ul>
+          </div>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <div class="contOut clearfix">
+      <div class="contIn">
+        <div class="educations clearfix">
+          <h3>Education</h3>
+          <div class="education">
+            <h4>Master of Science in Finance</h4>
+            <p class="desc">DePaul University</p>
+            <span class="date">2020</span>
+          </div>
+          <div class="education">
+            <h4>Master of Science in Computer Science</h4>
+            <p class="desc">DePaul University</p>
+            <span class="date">2018</span>
+          </div>
+          <div class="education">
+            <h4>Master of Science in Electrical Engineering</h4>
+            <p class="desc">Illinois Institute of Technology</p>
+            <span class="date">2012</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="contOut clearfix half">
+      <div class="contIn">
+        <div class="section middle clearfix">
+          <ul class="buttons">
+            <li><a href="https://mahjong.jaytang.com" target="_blank">Mahjong</a></li>
+            <li><a href="https://pets.jaytang.com" target="_blank">Cat</a></li>
+          </ul>
+        </div>
+        <div class="divider"></div>
+      </div>
+    </div>
+    <ul class="sm">
+	  <li>
+        <a href="https://github.com/jayhtang"><i class="fa fa-github"></i></a>
+      </li>
+      <li>
+        <a href="https://instagram.com/jayhtang/"><i class="fa fa-instagram"></i></a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/jayhaotang"><i class="fa fa-linkedin"></i></a>
+      </li>
+    </ul>
+  </body>
+</html>
