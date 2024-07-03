@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
   <head>
+     <!-- Google tag for Analytics (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-69R1TLSBEL"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-69R1TLSBEL');
+    </script>
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playfair+Display|PT+Sans" />
     <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/font-awesome.css" />
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script>
+      function getJobFromBtnClick(btn){
+        return btn.closest(".job").find("h2").clone().children().remove().end().text();
+      }
       $(window).load(function () {
         // Page Load Anim
         $(".contOut").animate(
@@ -17,8 +28,11 @@
         );
         // Jobs Accordion
         $(".fa-plus").closest(".job").find("p").slideUp();
-        $(".openBtn").on("click", function () {
+        $(".openBtn").on("click", function (event) {
           if ($(this).hasClass("open")) {
+            gtag('event', 'job_slide_up', {
+              'job': getJobFromBtnClick($(this))
+            });
             $(this).removeClass("open").removeClass("fa-minus").addClass("fa-plus");
             $(this)
               .closest(".job")
@@ -31,6 +45,9 @@
               )
               .slideUp();
           } else {
+            gtag('event', 'job_slide_down', {
+              'job': getJobFromBtnClick($(this))
+            });
             $(this).addClass("open").removeClass("fa-plus").addClass("fa-minus");
             $(this).closest(".job").find("p").slideDown().animate(
               {
@@ -45,10 +62,6 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10948550944"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){
-        dataLayer.push(arguments);
-      }
       gtag('js', new Date());
       gtag('config', 'AW-10948550944');
     </script>
@@ -216,7 +229,7 @@
         <div class="section middle clearfix">
           <ul class="buttons">
             <li><a href="https://mahjong.jaytang.com" target="_blank">Mahjong</a></li>
-            <li><a href="https://pets.jaytang.com" target="_blank">Cat</a></li>
+            <li><a href="https://renovation.jaytang.com" target="_blank">Renovation</a></li>
           </ul>
         </div>
         <div class="divider"></div>
