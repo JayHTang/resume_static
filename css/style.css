@@ -270,6 +270,11 @@ a {
   color: #fff;
   clear: left;
 }
+.skills.code li.prim_inline {
+  text-shadow: none;
+  background: #004262;
+  color: #fff;
+}
 .skills.software {
   background: #608341;
 }
