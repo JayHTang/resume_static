@@ -1,7 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-     <!-- Google tag for Analytics (gtag.js) -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jay Tang — Software Engineer</title>
+    <meta
+      name="description"
+      content="Resume and experience of Jay Tang, Software Engineer at Google."
+    />
+
+    <!-- Google tag for Analytics (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-69R1TLSBEL"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -9,244 +17,620 @@
       gtag('js', new Date());
       gtag('config', 'G-69R1TLSBEL');
     </script>
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Playfair+Display|PT+Sans" />
-    <link rel="stylesheet" type="text/css" href="https://s3-us-west-2.amazonaws.com/s.cdpn.io/85807/font-awesome.css" />
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-    <script>
-      function getJobFromBtnClick(btn){
-        return btn.closest(".job").find("h2").clone().children().remove().end().text();
-      }
-      $(window).load(function () {
-        // Page Load Anim
-        $(".contOut").animate(
-          {
-            opacity: "1",
-          },
-          1200
-        );
-        // Jobs Accordion
-        $(".fa-plus").closest(".job").find("p").slideUp();
-        $(".openBtn").on("click", function (event) {
-          if ($(this).hasClass("open")) {
-            gtag('event', 'job_slide_up', {
-              'job': getJobFromBtnClick($(this))
-            });
-            $(this).removeClass("open").removeClass("fa-minus").addClass("fa-plus");
-            $(this)
-              .closest(".job")
-              .find("p")
-              .animate(
-                {
-                  opacity: "0",
-                },
-                200
-              )
-              .slideUp();
-          } else {
-            gtag('event', 'job_slide_down', {
-              'job': getJobFromBtnClick($(this))
-            });
-            $(this).addClass("open").removeClass("fa-plus").addClass("fa-minus");
-            $(this).closest(".job").find("p").slideDown().animate(
-              {
-                opacity: "1",
-              },
-              400
-            );
-          }
-        });
-      });
-    </script>
+
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10948550944"></script>
     <script>
       gtag('js', new Date());
       gtag('config', 'AW-10948550944');
     </script>
+
     <!-- Event snippet for Page view conversion page -->
     <script>
       gtag('event', 'conversion', {'send_to': 'AW-10948550944/CICvCLKb5JsZEKDC1uQo'});
     </script>
+
+    <!-- Initialize theme from localStorage or system preference before paint -->
+    <script>
+      (function () {
+        try {
+          var savedTheme = localStorage.getItem('theme');
+          var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var theme = savedTheme ? savedTheme : (systemDark ? 'dark' : 'light');
+          document.documentElement.setAttribute('data-theme', theme);
+        } catch (e) {}
+      })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
   </head>
   <body>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="section top clearfix">
-          <div class="logoCont"></div>
-          <h1>Jay Tang</h1>
-          <div class="moreInfo">
-            <p>
-              jay.hao.tang@gmail.com<br />
-            </p>
-          </div>
-          <p class="tagline">
-            Software Engineer<br />
-          </p>
-        </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <div class="job">
-            <h2><img class="logo" src="images/google.png"/>Google<i class="fa fa-minus openBtn open"></i><span>July 2022 - present </span></h2>
-            <p>
-              <strong>Position: </strong>SWE<br />
-              <strong>Description: </strong>Risk Mitigation team under Google Ads<br />
-              <span class="brag">&#8226;&nbsp;&nbsp;Develop active strategies that lead towards fraudulent reduction within the Google Advertiser ecosystem.</span>
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <div class="job">
-            <h2><img class="logo" src="images/jll.svg"/>JLL Technologies (JLLT)<i class="fa fa-plus openBtn"></i><span>May 2021 - May 2022 </span></h2>
-            <p>
-              <strong>Position: </strong>Senior Data Enginner<br />
-              <strong>Description: </strong>Process commercial real estate data<br />
-              <span class="brag">
-			    &#8226;&nbsp;&nbsp;ETLs with PySpark in Azure Data Lake<br />
-				&#8226;&nbsp;&nbsp;APIs which handles REST requests and GraphQL queries<br />
-			  </span>
-            </p>
-          </div>
-        </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <div class="job">
-            <h2><img class="logo logo-white" src="images/supernova.png"/>Supernova Lending<i class="fa fa-plus openBtn"></i><span>Dec 2020 - May 2021 </span></h2>
-            <p>
-              <strong>Position: </strong>Software Engineer<br />
-              <strong>Description: </strong>Maintain Security Master data<br />
-              <span class="brag">
-			    &#8226;&nbsp;&nbsp;Python ETLs for security pricing data<br />
-				&#8226;&nbsp;&nbsp;End of day data for all securities and real-time intra-day data for stocks<br />
-			  </span>
-            </p>
+    <!-- ====================================================================
+         FULL-BLEED ROYAL INDIGO & AMBER MASTHEAD
+         ==================================================================== -->
+    <header class="masthead">
+      <div class="masthead-inner">
+        <!-- Top Utility Strip -->
+        <div class="masthead-top">
+          <nav class="masthead-nav" aria-label="Section navigation">
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#education">Education</a>
+            <a href="#projects">Projects</a>
+          </nav>
+
+          <div class="masthead-utilities">
+            <button
+              type="button"
+              class="masthead-btn"
+              id="printBtn"
+              aria-label="Print or save resume as PDF"
+              title="Print / Save as PDF"
+            >
+              <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Print</span>
+            </button>
+
+            <button
+              type="button"
+              class="masthead-btn"
+              id="themeToggle"
+              aria-label="Toggle color theme"
+              title="Switch Light / Dark Theme"
+            >
+              <svg class="icon-sun" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+              </svg>
+              <svg class="icon-moon" viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+              </svg>
+              <span id="themeLabel">Theme</span>
+            </button>
           </div>
         </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <div class="job">
-            <h2><img class="logo" src="images/depaul.png"/>DePaul University<i class="fa fa-plus openBtn"></i><span>Apr 2017 - Nov 2020 </span></h2>
-            <p>
-              <strong>Position: </strong>ERP Developer/Business Analyst<br />
-              <strong>Description: </strong>Application development for university's ERP system<br />
-              <span class="brag">
-			    &#8226;&nbsp;&nbsp;Application development for jobs that PeopleSoft cannot do<br />
-			  </span>
-            </p>
+
+        <!-- Main Hero Row -->
+        <div class="masthead-hero">
+          <div class="masthead-identity">
+            <p class="tagline">Software Engineer</p>
+            <h1 class="masthead-name">Jay Tang</h1>
           </div>
-        </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <div class="contOut clearfix half">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <div class="skills code odd">
-            <h3>Programming Languages<i class="fa fa-code"></i></h3>
-            <ul>
-              <li class="prim">Python</li>
-              <li>PySpark</li>
-              <li>SQLAlchemy</li>
-              <li>Django</li>
-              <li class="prim">C#</li>
-              <li>.NET Framework</li>
-              <li>.NET Core</li>
-              <li class="prim">Java</li>
-              <li class="prim_inline">C/C++</li>
-			        <li class="prim_inline">Scala</li>
-              <li class="prim_inline">Go</li>
-              <li class="prim_inline">Dart</li>
-            </ul>
-          </div>
-          <div class="skills software">
-            <h3>Practices & Tools<i class="fa fa-laptop"></i></h3>
-            <ul>
-              <li class="prim">Relational Databases</li>
-              <li>SQL Server</li>
-              <li>Oracle Database</li>
-              <li>MySQL</li>
-              <li>SQLite</li>
-              <li class="prim">Big Data</li>
-              <li>Databricks</li>
-              <li>Azure Cosmos DB</li>
-              <li>Redis</li>
-              <li class="prim">Dev Approach</li>
-              <li>Git</li>
-              <li>Agile</li>
-              <li class="prim">Troubleshooting</li>
-              <li>Root cause Analysis</li>
-              <li>Problem solving</li>
-			        <li class="prim">Operating Systems</li>
-              <li>Windows</li>
-              <li>Linux</li>
-			        <li>macOS</li>
+
+          <div class="masthead-contact moreInfo">
+            <div class="email-dispatch">
+              <a href="mailto:jayhtang4@gmail.com" class="masthead-email">
+                jayhtang4@gmail.com
+              </a>
+              <button
+                type="button"
+                class="copy-chip"
+                id="copyEmailBtn"
+                data-email="jayhtang4@gmail.com"
+                aria-label="Copy email address"
+              >
+                <span id="copyFeedback">Copy</span>
+              </button>
+            </div>
+
+            <ul class="sm" aria-label="Social links">
+              <li>
+                <a href="https://github.com/jayhtang" target="_blank" rel="noopener noreferrer">GitHub</a>
+              </li>
+              <li class="sm-dot" aria-hidden="true">&bull;</li>
+              <li>
+                <a href="https://www.linkedin.com/in/jayhaotang" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+              </li>
+              <li class="sm-dot" aria-hidden="true">&bull;</li>
+              <li>
+                <a href="https://instagram.com/jayhtang/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </li>
             </ul>
           </div>
         </div>
-        <div class="divider"></div>
       </div>
-    </div>
-    <div class="contOut clearfix">
-      <div class="contIn">
-        <div class="educations clearfix">
-          <h3>Education</h3>
-          <div class="education">
-            <h4>Master of Science in Finance</h4>
-            <p class="desc">DePaul University</p>
-            <span class="date">2020</span>
+    </header>
+
+    <!-- ====================================================================
+         OPEN MAGAZINE SPREAD CANVAS
+         ==================================================================== -->
+    <main class="magazine-spread">
+      <!-- EXPERIENCE -->
+      <section id="experience" class="spread-section reveal" aria-labelledby="exp-heading">
+        <div class="section-rule-bar">
+          <h2 id="exp-heading" class="section-heading">Experience</h2>
+          <div class="section-line" aria-hidden="true"></div>
+          <button type="button" class="spread-toggle-btn" id="toggleAllJobsBtn">
+            Collapse All
+          </button>
+        </div>
+
+        <div class="experience-rows">
+          <!-- Google -->
+          <article class="job spread-row open" data-job="Google">
+            <div class="row-left">
+              <div class="company-lockup">
+                <span class="logo-tile">
+                  <img class="logo" src="images/google.png" alt="Google logo" />
+                </span>
+                <h3 class="company-title">Google</h3>
+              </div>
+              <div class="tenure-date current">Jul 2022 – Present</div>
+            </div>
+
+            <div class="row-right">
+              <div class="role-trigger openBtn open" role="button" tabindex="0" aria-expanded="true">
+                <div class="role-kicker">
+                  <span class="role-position">Software Engineer</span>
+                </div>
+                <span class="row-ToggleIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="role-collapse">
+                <div class="role-collapse-inner">
+                  <div class="sub-roles">
+                    <div class="sub-role-item">
+                      <div class="sub-role-head">
+                        <span class="sub-role-team">Search &mdash; Serving Ecosystem</span>
+                        <span class="sub-role-date current">Sep 2024 – Present</span>
+                      </div>
+                      <ul class="editorial-bullets">
+                        <li>Dark Launch Infrastructure</li>
+                      </ul>
+                    </div>
+
+                    <div class="sub-role-item">
+                      <div class="sub-role-head">
+                        <span class="sub-role-team">Google Ads &mdash; Security / Fraud Prevention</span>
+                        <span class="sub-role-date">Jul 2022 – Sep 2024</span>
+                      </div>
+                      <ul class="editorial-bullets">
+                        <li>Develop active strategies that lead towards fraudulent reduction within the Google Advertiser ecosystem.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- JLL Technologies (JLLT) -->
+          <article class="job spread-row open" data-job="JLL Technologies (JLLT)">
+            <div class="row-left">
+              <div class="company-lockup">
+                <span class="logo-tile">
+                  <img class="logo" src="images/jll.svg" alt="JLL Technologies logo" />
+                </span>
+                <h3 class="company-title">JLL Technologies (JLLT)</h3>
+              </div>
+              <div class="tenure-date">May 2021 – May 2022</div>
+            </div>
+
+            <div class="row-right">
+              <div class="role-trigger openBtn open" role="button" tabindex="0" aria-expanded="true">
+                <div class="role-kicker">
+                  <span class="role-position">Senior Data Engineer</span>
+                  <span class="role-sep">&middot;</span>
+                  <span class="role-team">Process commercial real estate data</span>
+                </div>
+                <span class="row-ToggleIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="role-collapse">
+                <div class="role-collapse-inner">
+                  <ul class="editorial-bullets">
+                    <li>ETLs with PySpark in Azure Data Lake</li>
+                    <li>APIs which handles REST requests and GraphQL queries</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Supernova Lending -->
+          <article class="job spread-row open" data-job="Supernova Lending">
+            <div class="row-left">
+              <div class="company-lockup">
+                <span class="logo-tile logo-white">
+                  <img class="logo" src="images/supernova.png" alt="Supernova Lending logo" />
+                </span>
+                <h3 class="company-title">Supernova Lending</h3>
+              </div>
+              <div class="tenure-date">Dec 2020 – May 2021</div>
+            </div>
+
+            <div class="row-right">
+              <div class="role-trigger openBtn open" role="button" tabindex="0" aria-expanded="true">
+                <div class="role-kicker">
+                  <span class="role-position">Software Engineer</span>
+                  <span class="role-sep">&middot;</span>
+                  <span class="role-team">Maintain Security Master data</span>
+                </div>
+                <span class="row-ToggleIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="role-collapse">
+                <div class="role-collapse-inner">
+                  <ul class="editorial-bullets">
+                    <li>Python ETLs for security pricing data</li>
+                    <li>End of day data for all securities and real-time intra-day data for stocks</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- DePaul University -->
+          <article class="job spread-row open" data-job="DePaul University">
+            <div class="row-left">
+              <div class="company-lockup">
+                <span class="logo-tile">
+                  <img class="logo" src="images/depaul.png" alt="DePaul University logo" />
+                </span>
+                <h3 class="company-title">DePaul University</h3>
+              </div>
+              <div class="tenure-date">Apr 2017 – Nov 2020</div>
+            </div>
+
+            <div class="row-right">
+              <div class="role-trigger openBtn open" role="button" tabindex="0" aria-expanded="true">
+                <div class="role-kicker">
+                  <span class="role-position">ERP Developer/Business Analyst</span>
+                  <span class="role-sep">&middot;</span>
+                  <span class="role-team">Application development for university's ERP system</span>
+                </div>
+                <span class="row-ToggleIcon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="6 9 12 15 18 9"></polyline>
+                  </svg>
+                </span>
+              </div>
+
+              <div class="role-collapse">
+                <div class="role-collapse-inner">
+                  <ul class="editorial-bullets">
+                    <li>Application development for jobs that PeopleSoft cannot do</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS & TECHNOLOGIES -->
+      <section id="skills" class="spread-section reveal" aria-labelledby="skills-heading">
+        <div class="section-rule-bar">
+          <h2 id="skills-heading" class="section-heading">Skills &amp; Technologies</h2>
+          <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="magazine-two-col">
+          <!-- Programming Languages -->
+          <div class="editorial-column accent-indigo">
+            <h3 class="column-kicker">Programming Languages</h3>
+
+            <div class="editorial-skill-list">
+              <div class="skill-entry">
+                <span class="skill-prim">Python</span>
+                <span class="skill-sub">PySpark &bull; SQLAlchemy &bull; Django</span>
+              </div>
+
+              <div class="skill-entry">
+                <span class="skill-prim">C#</span>
+                <span class="skill-sub">.NET Framework &bull; .NET Core</span>
+              </div>
+
+              <div class="skill-entry prim-inline-row">
+                <span class="skill-prim">Java</span>
+                <span class="skill-prim">C/C++</span>
+                <span class="skill-prim">Scala</span>
+                <span class="skill-prim">Go</span>
+              </div>
+            </div>
           </div>
-          <div class="education">
-            <h4>Master of Science in Computer Science</h4>
-            <p class="desc">DePaul University</p>
-            <span class="date">2018</span>
+
+          <!-- Practices & Tools -->
+          <div class="editorial-column accent-rose">
+            <h3 class="column-kicker">Practices &amp; Tools</h3>
+
+            <div class="editorial-skill-list">
+              <div class="skill-entry">
+                <span class="skill-prim">Relational Databases</span>
+                <span class="skill-sub">SQL Server &bull; Oracle Database &bull; MySQL &bull; SQLite</span>
+              </div>
+
+              <div class="skill-entry">
+                <span class="skill-prim">Big Data</span>
+                <span class="skill-sub">Databricks &bull; Azure Cosmos DB &bull; Redis</span>
+              </div>
+
+              <div class="skill-entry">
+                <span class="skill-prim">Dev Approach</span>
+                <span class="skill-sub">Git &bull; Perforce &bull; Agile</span>
+              </div>
+
+              <div class="skill-entry">
+                <span class="skill-prim">Troubleshooting</span>
+                <span class="skill-sub">Root cause Analysis &bull; Problem solving</span>
+              </div>
+
+              <div class="skill-entry">
+                <span class="skill-prim">Operating Systems</span>
+                <span class="skill-sub">Windows &bull; Linux &bull; macOS</span>
+              </div>
+            </div>
           </div>
-          <div class="education">
-            <h4>Master of Science in Electrical Engineering</h4>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="spread-section reveal" aria-labelledby="edu-heading">
+        <div class="section-rule-bar">
+          <h2 id="edu-heading" class="section-heading">Education</h2>
+          <div class="section-line" aria-hidden="true"></div>
+        </div>
+
+        <div class="magazine-three-col">
+          <div class="edu-column">
+            <div class="edu-year-tag">2020</div>
+            <h4 class="edu-degree">Master of Science in Finance</h4>
+            <p class="desc">DePaul University</p>
+          </div>
+
+          <div class="edu-column">
+            <div class="edu-year-tag">2018</div>
+            <h4 class="edu-degree">Master of Science in Computer Science</h4>
+            <p class="desc">DePaul University</p>
+          </div>
+
+          <div class="edu-column">
+            <div class="edu-year-tag">2012</div>
+            <h4 class="edu-degree">Master of Science in Electrical Engineering</h4>
             <p class="desc">Illinois Institute of Technology</p>
-            <span class="date">2012</span>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="contOut clearfix half">
-      <div class="contIn">
-        <div class="section middle clearfix">
-          <ul class="buttons">
-            <li><a href="https://mahjong.jaytang.com" target="_blank">Mahjong</a></li>
-            <li><a href="https://renovation.jaytang.com" target="_blank">Renovation</a></li>
-          </ul>
+      </section>
+
+      <!-- PROJECTS (RSVP first, then Mahjong, then Renovation) -->
+      <section id="projects" class="spread-section reveal" aria-labelledby="proj-heading">
+        <div class="section-rule-bar">
+          <h2 id="proj-heading" class="section-heading">Featured Sites</h2>
+          <div class="section-line" aria-hidden="true"></div>
         </div>
-        <div class="divider"></div>
-      </div>
-    </div>
-    <ul class="sm">
-	  <li>
-        <a href="https://github.com/jayhtang"><i class="fa fa-github"></i></a>
-      </li>
-      <li>
-        <a href="https://instagram.com/jayhtang/"><i class="fa fa-instagram"></i></a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/jayhaotang"><i class="fa fa-linkedin"></i></a>
-      </li>
-    </ul>
+
+        <ul class="buttons magazine-three-col project-strips">
+          <li>
+            <a href="https://rsvp.jaytang.com" target="_blank" rel="noopener noreferrer" class="project-strip strip-indigo">
+              <div class="strip-top">
+                <span class="strip-title">RSVP</span>
+                <span class="strip-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+              <span class="strip-url">rsvp.jaytang.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://mahjong.jaytang.com" target="_blank" rel="noopener noreferrer" class="project-strip strip-rose">
+              <div class="strip-top">
+                <span class="strip-title">Mahjong</span>
+                <span class="strip-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+              <span class="strip-url">mahjong.jaytang.com</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="https://renovation.jaytang.com" target="_blank" rel="noopener noreferrer" class="project-strip strip-amber">
+              <div class="strip-top">
+                <span class="strip-title">Renovation</span>
+                <span class="strip-arrow" aria-hidden="true">&rarr;</span>
+              </div>
+              <span class="strip-url">renovation.jaytang.com</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <script>
+      (function () {
+        // Extract exact job name for Google Analytics events
+        function getJobFromCard(jobCard) {
+          if (!jobCard) return '';
+          var dataJob = jobCard.getAttribute('data-job');
+          if (dataJob) return dataJob;
+          var heading = jobCard.querySelector('.company-title');
+          return heading ? heading.textContent.trim() : '';
+        }
+
+        // Toggle single job row with gtag tracking
+        function setJobState(jobCard, expand, triggerAnalytics) {
+          var headerBtn = jobCard.querySelector('.openBtn');
+          var isCurrentlyOpen = jobCard.classList.contains('open');
+          if (isCurrentlyOpen === expand) return;
+
+          var jobName = getJobFromCard(jobCard);
+
+          if (expand) {
+            jobCard.classList.add('open');
+            if (headerBtn) {
+              headerBtn.classList.add('open');
+              headerBtn.setAttribute('aria-expanded', 'true');
+            }
+            if (triggerAnalytics && typeof gtag === 'function') {
+              gtag('event', 'job_slide_down', { job: jobName });
+            }
+          } else {
+            jobCard.classList.remove('open');
+            if (headerBtn) {
+              headerBtn.classList.remove('open');
+              headerBtn.setAttribute('aria-expanded', 'false');
+            }
+            if (triggerAnalytics && typeof gtag === 'function') {
+              gtag('event', 'job_slide_up', { job: jobName });
+            }
+          }
+        }
+
+        function updateToggleAllLabel() {
+          var toggleAllBtn = document.getElementById('toggleAllJobsBtn');
+          if (!toggleAllBtn) return;
+          var allJobs = document.querySelectorAll('.job');
+          var anyClosed = Array.prototype.some.call(allJobs, function (job) {
+            return !job.classList.contains('open');
+          });
+          toggleAllBtn.textContent = anyClosed ? 'Expand All' : 'Collapse All';
+        }
+
+        // Experience Accordion click & keyboard handlers
+        document.querySelectorAll('.job .openBtn').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var jobCard = btn.closest('.job');
+            var willExpand = !jobCard.classList.contains('open');
+            setJobState(jobCard, willExpand, true);
+            updateToggleAllLabel();
+          });
+
+          btn.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              btn.click();
+            }
+          });
+        });
+
+        // Expand / Collapse All control
+        var toggleAllBtn = document.getElementById('toggleAllJobsBtn');
+        if (toggleAllBtn) {
+          toggleAllBtn.addEventListener('click', function () {
+            var allJobs = document.querySelectorAll('.job');
+            var anyClosed = Array.prototype.some.call(allJobs, function (job) {
+              return !job.classList.contains('open');
+            });
+            allJobs.forEach(function (job) {
+              setJobState(job, anyClosed, true);
+            });
+            updateToggleAllLabel();
+          });
+        }
+
+        // Theme Toggle (defaults to system preference, persists manual override)
+        var themeToggle = document.getElementById('themeToggle');
+        var themeLabel = document.getElementById('themeLabel');
+        var rootEl = document.documentElement;
+
+        function updateThemeLabel() {
+          if (!themeLabel) return;
+          var current = rootEl.getAttribute('data-theme') || 'light';
+          themeLabel.textContent = current === 'dark' ? 'Light' : 'Dark';
+        }
+        updateThemeLabel();
+
+        if (themeToggle) {
+          themeToggle.addEventListener('click', function () {
+            var current = rootEl.getAttribute('data-theme') || 'light';
+            var next = current === 'dark' ? 'light' : 'dark';
+            rootEl.setAttribute('data-theme', next);
+            updateThemeLabel();
+            try {
+              localStorage.setItem('theme', next);
+            } catch (e) {}
+          });
+        }
+
+        if (window.matchMedia) {
+          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
+            try {
+              if (!localStorage.getItem('theme')) {
+                rootEl.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+                updateThemeLabel();
+              }
+            } catch (err) {}
+          });
+        }
+
+        // Copy Email Button
+        var copyBtn = document.getElementById('copyEmailBtn');
+        var copyFeedback = document.getElementById('copyFeedback');
+        if (copyBtn && navigator.clipboard) {
+          copyBtn.addEventListener('click', function () {
+            var email = copyBtn.getAttribute('data-email');
+            navigator.clipboard.writeText(email).then(function () {
+              copyBtn.classList.add('copied');
+              if (copyFeedback) copyFeedback.textContent = 'Copied!';
+              setTimeout(function () {
+                copyBtn.classList.remove('copied');
+                if (copyFeedback) copyFeedback.textContent = 'Copy';
+              }, 2000);
+            });
+          });
+        }
+
+        // Print Button
+        var printBtn = document.getElementById('printBtn');
+        if (printBtn) {
+          printBtn.addEventListener('click', function () {
+            document.querySelectorAll('.job').forEach(function (job) {
+              setJobState(job, true, false);
+            });
+            updateToggleAllLabel();
+            window.print();
+          });
+        }
+
+        // Entrance Reveal
+        if ('IntersectionObserver' in window) {
+          var revealObserver = new IntersectionObserver(
+            function (entries) {
+              entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add('is-visible');
+                  revealObserver.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.06 }
+          );
+
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            revealObserver.observe(el);
+          });
+        } else {
+          document.querySelectorAll('.reveal').forEach(function (el) {
+            el.classList.add('is-visible');
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
